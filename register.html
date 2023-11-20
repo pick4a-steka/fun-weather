@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="reg.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400&family=Edu+TAS+Beginner&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
     <title>WeatherApp</title>
 </head>
@@ -13,7 +14,7 @@
     <!--HEADER
     ------------------------------------------------------------------------->
 
-    <header class="header">
+    <header class="header header--sublist">
         <div class="container">
             <div class="header__inner">
                 <div class="header__logo">
@@ -41,6 +42,46 @@
     </header>
 
     <!--REGISTRING
+    ------------------------------------------------------------------------->
+
+    <div class="reg">
+        <div class="container-for-register">
+            <div class="block-logo">
+                <h1 class="logo">fun weather.</h1>
+            </div>
+            <form action="">
+                <div class="field">
+                    <label class="reg-text" for="username">Username:</label>
+                    <div class="block-input-field">
+                        <input class="input-field" type="text" placeholder="Username" id="username" name="username" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="reg-text" for="email">Email:</label>
+                    <div class="block-input-field">
+                        <input class="input-field" type="email" placeholder="Email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="reg-text" for="password">Password:</label>
+                    <div class="block-input-field">
+                        <input class="input-field" type="password" placeholder="Password" id="password" name="password" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="reg-text" for="confirmPassword">Confirm password:</label>
+                    <div class="block-input-field">
+                        <input class="input-field" type="password" placeholder="Confirm password" id="confirmPassword" name="confirmPassword" required>
+                    </div> 
+                </div>
+                <div class="btn-reg">
+                    <button class="btn btn--green" href="#">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--FOOTER
     ------------------------------------------------------------------------->
 
     <footer class="footer">
@@ -74,9 +115,6 @@
             <div class="author">©️ 2023 Michal Kolmogorov. O729Corporation !-*^_^*-!</div>
         </div>
     </footer>
-
-    <!--FOOTER
-    ------------------------------------------------------------------------->
 
 </body>
 </html>

@@ -35,6 +35,11 @@ body {
     z-index: 1000;
 }
 
+.header--sublist {
+    background-color: #718bfb;
+    position: static;
+}
+
 .logo {
     color: #ffffff;
     font-weight: 700;

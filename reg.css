@@ -1,0 +1,76 @@
+/* REGISTRING
+---------------------------------------------- */
+
+.container-for-register {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    overflow: hidden;
+
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #718bfb;
+}
+
+.block-logo {
+    width: 106%;
+    height: 100px;
+    margin-top: -45px;
+    margin-right: -20px;
+    margin-left: -20px;
+    padding-top: 25px;
+    background-color: #657cdd;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reg-text {
+    font-family: "Ubuntu";
+    font-size: 30px;
+    font-weight: 400;
+    color: black;
+}
+
+input::placeholder {
+    font-family: "Ubuntu";
+    font-size: 20px;
+    font-weight: 300;
+    color: #828282;
+}
+
+.block-input-field {
+    margin-top: 5px;
+}
+
+.field {
+    margin-top: 45px;
+}
+
+.field:last-child {
+    margin-bottom: 45px;
+}
+
+.input-field {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+}
+
+.btn-reg {
+    margin-top: 45px;
+    float: right;
+}
+
+.btn--green {
+    float: left;
+    background-color: #00a550;
+    transition: background-color .1s linear;
+}
+
+.btn--green:hover {
+    background-color: #138808;
+}
