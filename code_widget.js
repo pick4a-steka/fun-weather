@@ -9,16 +9,14 @@ let centerIndex = 1;
 let rightIndex = 2;
 
 function updateImages(center_i, left_i, right_i)
-{    
+{
+        
     document.querySelector(".slides-one img").src = images[left_i];
 
     document.querySelector(".slides-two img").src = images[center_i];
 
     document.querySelector(".slides-three img").src = images[right_i];
 
-    console.log(left_i);
-    console.log(center_i);
-    console.log(right_i);
 }
 
 function nextSlide()

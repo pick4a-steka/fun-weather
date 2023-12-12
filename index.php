@@ -21,21 +21,43 @@
                 </div>
                 <nav class="header__nav">
                     <a class="nav__link" href="#">Home</a>
-                    <a class="nav__link" href="#">Features</a>
-                    <a class="nav__link" href="#">Reviews</a>
-                    <a class="nav__link" href="#">Download</a>
-                </nav>
-                <div class="header__icons">
-                    <a class="social__item" href="#">
-                        <img src="img/social/twitter.png" height=30 alt="">
-                    </a>
-                    <a class="social__item" href="#">
-                        <img src="img/social/instagram.png" height=30 alt="">
-                    </a>
-                    <a class="social__item" href="#">
-                        <img src="img/social/facebook.png" height=30 alt="">
-                    </a>
-                </div>
+                    <a class="nav__link" href="phpinfo.php">Features</a>
+                    <?php
+                        session_start();
+                        if (isset($_SESSION['username'])) {
+                            echo '<a class="nav__link" href="log_out.php">Log out</a>';
+                        } else {
+                            echo '<a class="nav__link" href="login.html">Login</a>';
+                            echo '<a class="nav__link" href="register.html">Registration</a>';
+                        }
+                echo '</nav>';
+                    if (isset($_SESSION['username'])) {
+                            
+                        echo '<div class="profile-icon">';
+                            echo '<div class="circle-profile">';
+                                echo '<img src="img/circle/profile-icon.jpg" alt="profile icon">';
+                            echo '</div>';
+                            echo '<div class="text_username">';
+                                echo "<span class='username'>" . $_SESSION['username'] . "</span>";
+                            echo '</div>';
+                        echo '</div>';
+                            
+                    } else {
+
+                        echo '<div class="header__icons footer__icons">';
+                            echo '<a class="social__item" href="#">';
+                                echo '<img src="img/social/twitter.png" height=30 alt="">';
+                            echo '</a>';
+                            echo '<a class="social__item" href="#">';
+                                echo '<img src="img/social/instagram.png" height=30 alt="">';
+                            echo '</a>';
+                            echo '<a class="social__item" href="#">';
+                                echo '<img src="img/social/facebook.png" height=30 alt="">';
+                            echo '</a>';
+                        echo '</div>';
+
+                    }
+                ?>
             </div>
         </div>
     </header>
@@ -90,6 +112,59 @@
     <div class="main">
         <div class="container">
             <div class="main__inner">
+                <div class="weather-block">
+                    <div class="text-weather-block">
+                        <p class="text-weather">weather now</p>
+                    </div>
+                    <script src="api_weather.js"></script>
+                    <div class="weather">
+                        <p class="package-name"></p>
+                        <hr class="hr-weather">
+                        <p class="temperature"></p>
+                        <p class="disclaimer"></p>
+                        <hr class="hr-weather">
+                        <img class="icon-weather" src="" alt="">
+                        <hr class="hr-weather">
+                        <div class="weather-widget">
+                            <label for="city-select">Select City:</label>
+                                <select id="city-select">
+                                    <option value="spb">Saint Petersburg</option>
+                                    <option value="moscow">Moscow</option>
+                                </select>
+                            <div class="block-btn">
+                                <button id="btn-get-weather">Get Weather</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block-comments">
+                    <div class="headline-block-comments">
+                        <p class="text-headline-block-comments">Comments</p>
+                    </div>
+                    <?php
+                        if (isset($_SESSION['username'])) {
+                    ?>
+                            <form action="input_comment.php" id="commentForm" method="post">
+                                <textarea class="field-comment" type="commentText" name="commentText" placeholder="Leave a comment"></textarea>
+                                <div class="btn-comments">
+                                    <button class="btn btn--darkblue" type="submit">Post comment</button>
+                                </div>
+                            </form>
+                    <?php
+                        }
+                    ?>
+
+                    <ul id='LIST'>
+                        <li class="comment">
+                            <div class="left-block">
+                                <div class="user">Admin</div>
+                                <div class="timestamp">05.12.2023 10:00</div>
+                            </div>
+                            <div class="comment-text">Thank you for your choice</div>
+                        </li>
+                    </ul>
+                    <script src="comments_js.js"></script>
+                </div>
                 <div class="perfect_features">
                     <div class="lines_smb">
                         <div class="headline_smb">perfect features</div>
@@ -289,8 +364,8 @@
                 <nav class="header__nav footer__nav">
                     <a class="nav__link" href="#">Home</a>
                     <a class="nav__link" href="#">Features</a>
-                    <a class="nav__link" href="#">Reviews</a>
-                    <a class="nav__link" href="#">Download</a>
+                    <a class="nav__link" href="login.html">Login</a>
+                    <a class="nav__link" href="register.html">Registration</a>
                 </nav>
                 <div class="header__icons footer__icons">
                     <a class="social__item" href="#">
